@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace cse\helpers;
+use cse\helpers\Exceptions\CSEHelpersJsonException;
 
 /**
  * Class Json
@@ -23,5 +24,17 @@ class Json
     public static function encode(array $data, int $options = self::JSON_DEFAULT_UNESCAPED): string
     {
         return json_encode($data, $options);
+    }
+
+    /**
+     * Json decode
+     *
+     * @param string $data
+     * @param bool $as_array
+     * @return mixed
+     */
+    public static function decode(string $data, bool $as_array = true)
+    {
+        return json_decode($data, $as_array);
     }
 }
