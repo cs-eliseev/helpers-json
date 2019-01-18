@@ -9,3 +9,8 @@ use cse\helpers\Json;
 // ["example" => 12345] => {"example": 12345}
 var_dump(Json::encode(["example" => 12345]));
 echo PHP_EOL;
+
+// Example: decode
+// {"example": 12345} => ["example" => 12345]
+var_dump(Json::decode('{"example": 12345}'));
+echo PHP_EOL;
