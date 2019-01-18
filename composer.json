@@ -1,0 +1,31 @@
+{
+    "name": "cse/helpers-json",
+    "description": "The helpers allows you to JSON processing. Encode, decode, check error, throw exception - all this is available in this library.",
+    "keywords": ["json encode", "json decode", "json error", "json exception", "cse", "cs-eliseev", "framework", "basic", "library", "project"],
+    "homepage": "https://github.com/cs-eliseev/helpers-json",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eliseev Alexey",
+            "email": "a.k.eliseev@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "cse\\helpers\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "": "tests/"
+        }
+    }
+}
