@@ -64,6 +64,14 @@ Json::encode(["example" => 12345]);
 // {"example": 12345}
 ```
 
+**Decode**
+
+Example:
+```php
+Json::encode('{"example": 12345}');
+// ['example' => 12345]
+```
+
 
 ## License
 
