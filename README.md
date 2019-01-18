@@ -52,7 +52,17 @@ git clone https://github.com/cs-eliseev/helpers-json.git
 
 [Download the latest release here](https://github.com/cs-eliseev/helpers-json/archive/master.zip).
 
+## Usage
 
+The class consists of static methods that are conveniently used in any project. See example [examples-json.php](https://github.com/cs-eliseev/helpers-json/blob/master/examples/examples-json.php).
+
+**Encode**
+
+Example:
+```php
+Json::encode(["example" => 12345]);
+// {"example": 12345}
+```
 
 
 ## License
