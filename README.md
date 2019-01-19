@@ -5,6 +5,24 @@ The helpers allows you to JSON processing. Encode, decode, check error, throw ex
 
 Project repository: https://github.com/cs-eliseev/helpers-json
 
+```php
+$json = [
+    '{"example": 12345}',   // success
+    "{'example': 12345}",   // Syntax error
+    '{"example": 12345}',   // success
+];
+
+foreach ($json as $item) {
+    try {
+        Json::decode($item);
+        Json::errorToException();
+        var_dump('success');
+    } catch (CSEHelpersJsonException $e) {
+        var_dump($e->getMessage());
+    }
+}
+```
+
 ***
 
 ## Introduction
