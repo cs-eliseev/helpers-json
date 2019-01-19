@@ -83,4 +83,12 @@ class TestJson extends TestCase
             ],
         ];
     }
+
+    public function testErrorToException(): void
+    {
+        $this->expectException(CSEHelpersJsonException::class);
+
+        Json::decode("{'test': 12345}");
+        Json::errorToException();
+    }
 }
