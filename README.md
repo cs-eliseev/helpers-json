@@ -76,12 +76,25 @@ Json::encode('{"example": 12345}');
 
 Example:
 ```php
-   Json::decode('{"example": 12345}');
+Json::decode('{"example": 12345}');
 Json::isNoteError();
 // true
 Json::decode("{'example': 12345}");
 Json::isNoteError();
 // false
+```
+
+**Error to exception**
+
+Example:
+```php
+try {
+    Json::decode("{'example': 12345}");
+    Json::errorToException();
+} catch (CSEHelpersJsonException $e) {
+    var_dump($e->getMessage());
+}
+// Syntax error
 ```
 
 
