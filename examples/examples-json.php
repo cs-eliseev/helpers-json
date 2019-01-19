@@ -14,3 +14,16 @@ echo PHP_EOL;
 // {"example": 12345} => ["example" => 12345]
 var_dump(Json::decode('{"example": 12345}'));
 echo PHP_EOL;
+
+// Example: is not error
+$json = [
+    '{"example": 12345}',   // true
+    "{'example': 12345}",   // false
+    '{"example": 12345}',   // true
+];
+
+foreach ($json as $string) {
+    Json::decode($string);
+    var_dump(Json::isNoteError());
+}
+echo PHP_EOL;
