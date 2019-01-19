@@ -72,6 +72,18 @@ Json::encode('{"example": 12345}');
 // ['example' => 12345]
 ```
 
+**Check error last json transform**
+
+Example:
+```php
+   Json::decode('{"example": 12345}');
+Json::isNoteError();
+// true
+Json::decode("{'example': 12345}");
+Json::isNoteError();
+// false
+```
+
 
 ## License
 
