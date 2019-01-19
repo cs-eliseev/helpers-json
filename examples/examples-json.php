@@ -27,3 +27,21 @@ foreach ($json as $string) {
     var_dump(Json::isNoteError());
 }
 echo PHP_EOL;
+
+// Example: error to exception
+$json = [
+    '{"example": 12345}',   // success
+    "{'example': 12345}",   // Syntax error
+    '{"example": 12345}',   // success
+];
+
+foreach ($json as $string) {
+    try {
+        Json::decode($string);
+        Json::errorToException();
+        var_dump('success');
+    } catch (CSEHelpersJsonException $e) {
+        var_dump($e->getMessage());
+    }
+}
+echo PHP_EOL;
