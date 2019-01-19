@@ -37,4 +37,14 @@ class Json
     {
         return json_decode($data, $as_array);
     }
+
+    /**
+     * Check error last json transform
+     *
+     * @return bool
+     */
+    public static function isNoteError(): bool
+    {
+        return empty(json_last_error());
+    }
 }
