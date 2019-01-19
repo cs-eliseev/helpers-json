@@ -54,4 +54,33 @@ class TestJson extends TestCase
             ],
         ];
     }
+
+    /**
+     * @param string $data
+     * @param bool $expected
+     *
+     * @dataProvider providerIsNotError
+     */
+    public function testIsNotError(string $data, bool $expected): void
+    {
+        Json::decode($data);
+        $this->assertEquals($expected, Json::isNoteError());
+    }
+
+    /**
+     * @return array
+     */
+    public function providerIsNotError(): array
+    {
+        return [
+            [
+                '{"test": 12345}',
+                true
+            ],
+            [
+                "{'test': 12345}",
+                false
+            ],
+        ];
+    }
 }
