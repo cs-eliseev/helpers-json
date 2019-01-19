@@ -47,4 +47,20 @@ class Json
     {
         return empty(json_last_error());
     }
+
+    /**
+     * error to exception (CSEHelpersJsonException)
+     *
+     * @param null $msg
+     * @throws CSEHelpersJsonException
+     */
+    public static function errorToException($msg = null): void
+    {
+        if (self::isNoteError()) return;
+
+        throw new CSEHelpersJsonException(
+            json_last_error_msg() . (empty($msg) ? '' : ' ' . print_r($msg ,1)),
+            json_last_error()
+        );
+    }
 }
