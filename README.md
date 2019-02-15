@@ -82,8 +82,19 @@ The class consists of static methods that are conveniently used in any project. 
 
 Example:
 ```php
-Json::encode(["example" => 12345]);
+Json::encode(['example' => 12345]);
 // {"example": 12345}
+```
+
+**Pretty Print**
+
+Example:
+```php
+Json::prettyPrint(['example' => 12345, 'example2' => 56789]);
+// {
+//    "example": 12345,
+//    "example": 56789
+// }
 ```
 
 **Decode**
