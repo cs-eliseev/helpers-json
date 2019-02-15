@@ -6,8 +6,13 @@ use cse\helpers\Exceptions\CSEHelpersJsonException;
 use cse\helpers\Json;
 
 // Example: encode
-// ["example" => 12345] => {"example": 12345}
-var_dump(Json::encode(["example" => 12345]));
+// ['example' => 12345] => {"example": 12345}
+var_dump(Json::encode(['example' => 12345]));
+echo PHP_EOL;
+
+// Example: petty print
+// ["example" => 12345, "example2" => 56789] => {"example": 12345, "example": 56789}
+var_dump(Json::prettyPrint(['example' => 12345, 'example2' => 56789]));
 echo PHP_EOL;
 
 // Example: decode
