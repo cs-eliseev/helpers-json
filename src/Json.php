@@ -27,6 +27,17 @@ class Json
     }
 
     /**
+     * Print JSON data
+     *
+     * @param $data
+     * @return string
+     */
+    public static function prettyPrint($data)
+    {
+        return json_encode($data, JSON_PRETTY_PRINT);
+    }
+
+    /**
      * Json decode
      *
      * @param string $data
