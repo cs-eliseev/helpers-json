@@ -32,6 +32,30 @@ class TestJson extends TestCase
     }
 
     /**
+     * @param array $data
+     * @param string $expected
+     *
+     * @dataProvider providerEncode
+     */
+    public function testPrettyPrint(array $data, string $expected): void
+    {
+        $this->assertEquals($expected, Json::prettyPrint($data));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerPrettyPrint(): array
+    {
+        return [
+            [
+                ['test' => 12345, 'test' => 56789],
+                '{"example": 12345, "example": 56789}'
+            ],
+        ];
+    }
+
+    /**
      * @param string $data
      * @param array $expected
      *
