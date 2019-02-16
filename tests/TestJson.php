@@ -35,7 +35,7 @@ class TestJson extends TestCase
      * @param array $data
      * @param string $expected
      *
-     * @dataProvider providerEncode
+     * @dataProvider providerPrettyPrint
      */
     public function testPrettyPrint(array $data, string $expected): void
     {
@@ -49,8 +49,11 @@ class TestJson extends TestCase
     {
         return [
             [
-                ['test' => 12345, 'test' => 56789],
-                '{"example": 12345, "example": 56789}'
+                ['test' => 12345, 'test2' => 56789],
+                '{' . PHP_EOL .
+                '    "test": 12345,' . PHP_EOL .
+                '    "test2": 56789' . PHP_EOL .
+                '}'
             ],
         ];
     }
