@@ -49,10 +49,10 @@ class TestJson extends TestCase
     {
         return [
             [
-                ['test' => 12345, 'test2' => 56789],
+                ['example' => 12345, 'example2' => 56789],
                 '{' . PHP_EOL .
-                '    "test": 12345,' . PHP_EOL .
-                '    "test2": 56789' . PHP_EOL .
+                '    "example": 12345,' . PHP_EOL .
+                '    "example2": 56789' . PHP_EOL .
                 '}'
             ],
         ];
@@ -66,7 +66,7 @@ class TestJson extends TestCase
      */
     public function tesDecode(string $data, array $expected): void
     {
-        $this->assertArraySubset($expected, Json::decode($data));
+        $this->assertEquals($expected, Json::decode($data));
     }
 
     /**
@@ -77,7 +77,7 @@ class TestJson extends TestCase
         return [
             [
                 '{"test": 12345}',
-                'test' => 12345
+                ['test' => 12345]
             ],
         ];
     }
