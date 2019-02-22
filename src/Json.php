@@ -3,6 +3,7 @@
 declare(strict_types = 1);
 
 namespace cse\helpers;
+
 use cse\helpers\Exceptions\CSEHelpersJsonException;
 
 /**
@@ -19,6 +20,7 @@ class Json
      *
      * @param array $data
      * @param int $options
+     *
      * @return string
      */
     public static function encode(array $data, int $options = self::JSON_DEFAULT_UNESCAPED): string
@@ -30,6 +32,7 @@ class Json
      * Print JSON data
      *
      * @param $data
+     *
      * @return string
      */
     public static function prettyPrint($data)
@@ -42,6 +45,7 @@ class Json
      *
      * @param string $data
      * @param bool $as_array
+     *
      * @return mixed
      */
     public static function decode(string $data, bool $as_array = true)
@@ -60,9 +64,10 @@ class Json
     }
 
     /**
-     * error to exception (CSEHelpersJsonException)
+     * Error to exception
      *
      * @param null $msg
+     *
      * @throws CSEHelpersJsonException
      */
     public static function errorToException($msg = null): void
