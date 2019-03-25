@@ -21,4 +21,4 @@ build:
           - php-scrutinizer-run
   dependencies:
     override:
-    - composer install --ignore-platform-reqs --no-interaction
+      - composer install --ignore-platform-reqs --no-interaction
