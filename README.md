@@ -2,6 +2,7 @@ JSON CSE HELPERS
 =======
 
 [![Travis (.org)](https://img.shields.io/travis/cs-eliseev/helpers-json.svg?style=flat-square)](https://travis-ci.org/cs-eliseev/helpers-json)
+[![Codecov](https://img.shields.io/codecov/c/github/cs-eliseev/helpers-json.svg?style=flat-square)](https://codecov.io/gh/cs-eliseev/helpers-json)
 
 [![Packagist](https://img.shields.io/packagist/v/cse/helpers-json.svg?style=flat-square)](https://packagist.org/packages/cse/helpers-json)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=flat-square)](https://packagist.org/packages/cse/helpers-json)
