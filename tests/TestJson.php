@@ -11,6 +11,8 @@ class TestJson extends TestCase
      * @param array $data
      * @param string $expected
      *
+     * @throws CSEHelpersJsonException
+     *
      * @dataProvider providerEncode
      */
     public function testEncode(array $data, string $expected): void
@@ -34,6 +36,8 @@ class TestJson extends TestCase
     /**
      * @param array $data
      * @param string $expected
+     *
+     * @throws CSEHelpersJsonException
      *
      * @dataProvider providerPrettyPrint
      */
@@ -62,6 +66,8 @@ class TestJson extends TestCase
      * @param string $data
      * @param array $expected
      *
+     * @throws CSEHelpersJsonException
+     *
      * @dataProvider providerDecode
      */
     public function tesDecode(string $data, array $expected): void
@@ -85,6 +91,8 @@ class TestJson extends TestCase
     /**
      * @param string $data
      * @param bool $expected
+     *
+     * @throws CSEHelpersJsonException
      *
      * @dataProvider providerIsNotError
      */
@@ -111,11 +119,25 @@ class TestJson extends TestCase
         ];
     }
 
+    /**
+     * @throws CSEHelpersJsonException
+     */
     public function testErrorToException(): void
     {
         $this->expectException(CSEHelpersJsonException::class);
 
         Json::decode("{'test': 12345}");
         Json::errorToException();
+    }
+
+    /**
+     * @throws CSEHelpersJsonException
+     */
+    public function testSetCheckException(): void
+    {
+        $this->expectException(CSEHelpersJsonException::class);
+
+        Json::setCheckException();
+        Json::decode("{'test': 12345}");
     }
 }
