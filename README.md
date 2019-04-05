@@ -115,7 +115,7 @@ Json::prettyPrint(['example' => 12345, 'example2' => 56789]);
 
 Example:
 ```php
-Json::encode('{"example": 12345}');
+Json::decode('{"example": 12345}');
 // ['example' => 12345]
 ```
 
