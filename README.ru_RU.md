@@ -12,7 +12,7 @@ JSON CSE HELPERS
 [![Packagist](https://img.shields.io/packagist/l/cse/helpers-json.svg?style=flat-square)](https://github.com/cs-eliseev/helpers-json/blob/master/LICENSE.md)
 [![GitHub repo size](https://img.shields.io/github/repo-size/cs-eliseev/helpers-json.svg?style=flat-square)](https://github.com/cs-eliseev/helpers-json/archive/master.zip)
 
-Данная библиотек состоит из статических методов, которые расширяют работу с массивами. 
+Данная библиотек позволяет удобно работать с JSON данными. Доступны методы для кодирования, декодирования вызова исключений и др.
 
 Репозиторий проекта: https://github.com/cs-eliseev/helpers-json
 
@@ -41,7 +41,7 @@ foreach ($json as $item) {
 
 CSE HELPERS - это набор из небольших библиотек с простыми функциями написанных на PHP специально для вас.
 
-Несмотря на повсеместное использование PHP в качестве основного языка для WEB разработки, его зачастую недостаточно. ARRAYS CSE HELPERS, предоставляет дополнительные статические методы, позволяющие вам более эффективно работать с массивами.
+Несмотря на повсеместное использование PHP в качестве основного языка для WEB разработки, его зачастую недостаточно. JSON CSE HELPERS, позволит вам довольно просто использовать методы для кодирования, декодирования, проверки на ошибки, вызов исключения и прочее.
 
 CSE HELPERS создан для быстрой разработки веб-приложений.
 
