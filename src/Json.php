@@ -16,16 +16,27 @@ class Json
     const JSON_DEFAULT_UNESCAPED = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
 
     /**
+     * @var bool
+     */
+    protected static $checkException = false;
+
+    /**
      * Json encode
      *
      * @param array $data
      * @param int $options
      *
      * @return string
+     *
+     * @throws CSEHelpersJsonException
      */
     public static function encode(array $data, int $options = self::JSON_DEFAULT_UNESCAPED): string
     {
-        return json_encode($data, $options);
+        $result = json_encode($data, $options);
+
+        if (self::$checkException) self::errorToException();
+
+        return $result;
     }
 
     /**
@@ -34,23 +45,45 @@ class Json
      * @param $data
      *
      * @return string
+     *
+     * @throws CSEHelpersJsonException
      */
-    public static function prettyPrint($data)
+    public static function prettyPrint($data): string
     {
-        return json_encode($data, JSON_PRETTY_PRINT);
+        $result = json_encode($data, JSON_PRETTY_PRINT);
+
+        if (self::$checkException) self::errorToException();
+
+        return $result;
     }
 
     /**
      * Json decode
      *
      * @param string $data
-     * @param bool $as_array
+     * @param bool $assoc
      *
      * @return mixed
+     *
+     * @throws CSEHelpersJsonException
      */
-    public static function decode(string $data, bool $as_array = true)
+    public static function decode(string $data, bool $assoc = true)
     {
-        return json_decode($data, $as_array);
+        $result = json_decode($data, $assoc);
+
+        if (self::$checkException) self::errorToException();
+
+        return $result;
+    }
+
+    /**
+     * Set check Exception
+     *
+     * @param bool $status
+     */
+    public static function setCheckException(bool $status = true): void
+    {
+        self::$checkException = $status;
     }
 
     /**
