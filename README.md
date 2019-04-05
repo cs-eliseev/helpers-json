@@ -119,6 +119,7 @@ Json::encode('{"example": 12345}');
 // ['example' => 12345]
 ```
 
+
 **Check error last json transform**
 
 Example:
@@ -142,6 +143,73 @@ try {
     var_dump($e->getMessage());
 }
 // Syntax error
+```
+
+**Set check exception**
+
+Example:
+```php
+class Default
+{
+    public function example(): void
+    {
+        Json::encode('{"example": 12345}');
+    }
+}
+
+class ExceptionTrue
+{
+    public function example(): void
+    {
+        Json::setCheckException();
+        Json::encode("{'example': 12345}");
+    }
+}
+
+class ExceptionFalse
+{
+    public function example(): void
+    {
+        Json::setCheckException(false);
+        Json::encode("{'example': 12345}");
+    }
+}
+
+$default = new Default();
+$e_true = new ExceptionTrue();
+$e_false = new ExceptionFalse();
+
+try {
+    $default->example();
+} catch (CSEHelpersJsonException $e) {
+    var_dump($e->getMessage());
+}
+
+try {
+    $e_true->example();
+} catch (CSEHelpersJsonException $e) {
+    var_dump($e->getMessage());
+}
+// Syntax error
+
+try {
+    $default->example();
+} catch (CSEHelpersJsonException $e) {
+    var_dump($e->getMessage());
+}
+// Syntax error
+
+try {
+    $e_false->example();
+} catch (CSEHelpersJsonException $e) {
+    var_dump($e->getMessage());
+}
+
+try {
+    $default->example();
+} catch (CSEHelpersJsonException $e) {
+    var_dump($e->getMessage());
+}
 ```
 
 
@@ -169,7 +237,7 @@ phpunit --configuration PATH/TO/PROJECT/phpunit.xml
 
 ## License
 
-The CSE HELPERS is open-sourced software licensed under the MIT license. Please see [License File](https://github.com/cs-eliseev/helpers-json/blob/master/LICENSE.md) for more information.
+The CSE HELPERS JSON is open-source PHP library licensed under the MIT license. Please see [License File](https://github.com/cs-eliseev/helpers-json/blob/master/LICENSE.md) for more information.
 
 ***
 
