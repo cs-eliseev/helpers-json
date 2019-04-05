@@ -145,6 +145,17 @@ try {
 // Syntax error
 ```
 
+Add msg:
+```php
+try {
+    Json::decode("{'example': 12345}");
+    Json::errorToException('(JSON)');
+} catch (CSEHelpersJsonException $e) {
+    var_dump($e->getMessage());
+}
+// Syntax error (JSON)
+```
+
 **Set check exception**
 
 Example:
