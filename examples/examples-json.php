@@ -50,3 +50,14 @@ foreach ($json as $string) {
     }
 }
 echo PHP_EOL;
+
+Json::setCheckException();
+foreach ($json as $string) {
+    try {
+        Json::decode($string);
+        var_dump('success');
+    } catch (CSEHelpersJsonException $e) {
+        var_dump($e->getMessage());
+    }
+}
+echo PHP_EOL;
