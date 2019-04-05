@@ -108,7 +108,7 @@ class Json
         if (self::isNoteError()) return;
 
         throw new CSEHelpersJsonException(
-            json_last_error_msg() . (empty($msg) ? '' : ' ' . print_r($msg ,1)),
+            json_last_error_msg() . (empty($msg) ? '' : ' ' . print_r($msg ,true)),
             json_last_error()
         );
     }
