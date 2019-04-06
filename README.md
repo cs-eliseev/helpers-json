@@ -134,6 +134,25 @@ Json::isNoteError();
 // false
 ```
 
+**Get error**
+
+Example:
+```php
+Json::decode('{"example": 12345}');
+Json::getErrorMsg();
+// NULL
+Json::decode("{'example': 12345}");
+Json::getErrorMsg();
+// Syntax error
+```
+
+Add msg:
+```php
+Json::decode("{'example': 12345}");
+Json::getErrorMsg('- Example');
+// Syntax error - Example
+```
+
 **Error to exception**
 
 Example:
