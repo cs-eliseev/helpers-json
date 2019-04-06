@@ -34,6 +34,13 @@ foreach ($json as $string) {
 }
 echo PHP_EOL;
 
+// Example: get error msg
+foreach ($json as $string) {
+    Json::decode($string);
+    var_dump(Json::getErrorMsg('(json)'));
+}
+echo PHP_EOL;
+
 // Example: error to exception
 foreach ($json as $string) {
     try {
