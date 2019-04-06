@@ -97,9 +97,21 @@ class Json
     }
 
     /**
+     * Get error msg
+     *
+     * @param $msg
+     *
+     * @return string|null
+     */
+    public static function getErrorMsg($msg = null): ?string
+    {
+        return self::isNoteError() ? null : json_last_error_msg() . (empty($msg) ? '' : ' ' . print_r($msg ,true));
+    }
+
+    /**
      * Error to exception
      *
-     * @param null $msg
+     * @param $msg
      *
      * @throws CSEHelpersJsonException
      */
@@ -108,7 +120,7 @@ class Json
         if (self::isNoteError()) return;
 
         throw new CSEHelpersJsonException(
-            json_last_error_msg() . (empty($msg) ? '' : ' ' . print_r($msg ,true)),
+            self::getErrorMsg($msg),
             json_last_error()
         );
     }
