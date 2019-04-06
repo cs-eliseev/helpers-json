@@ -102,6 +102,13 @@ Json::encode(['example' => 12345]);
 // {"example": 12345}
 ```
 
+Set Check Exception:
+```php
+Json::setCheckException();
+Json::encode([urldecode('bad utf string %C4_')]);
+// Exception: Malformed UTF-8 characters, possibly incorrectly encoded
+```
+
 **Pretty Print**
 
 Example:
@@ -113,6 +120,13 @@ Json::prettyPrint(['example' => 12345, 'example2' => 56789]);
 // }
 ```
 
+Set Check Exception:
+```php
+Json::setCheckException();
+Json::prettyPrint([urldecode('bad utf string %C4_')]);
+// Exception: Malformed UTF-8 characters, possibly incorrectly encoded
+```
+
 **Decode**
 
 Example:
@@ -121,6 +135,12 @@ Json::decode('{"example": 12345}');
 // ['example' => 12345]
 ```
 
+Set Check Exception:
+```php
+Json::setCheckException();
+Json::decode("{'example': 12345}");
+// Syntax error
+```
 
 **Check error last json transform**
 

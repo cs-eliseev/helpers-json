@@ -105,6 +105,13 @@ Json::encode(['example' => 12345]);
 // {"example": 12345}
 ```
 
+Подключить исключения:
+```php
+Json::setCheckException();
+Json::encode([urldecode('bad utf string %C4_')]);
+// Exception: Malformed UTF-8 characters, possibly incorrectly encoded
+```
+
 **Форматирование json представление**
 
 Пример:
@@ -116,6 +123,13 @@ Json::prettyPrint(['example' => 12345, 'example2' => 56789]);
 // }
 ```
 
+Подключить исключения:
+```php
+Json::setCheckException();
+Json::encode([urldecode('bad utf string %C4_')]);
+// Exception: Malformed UTF-8 characters, possibly incorrectly encoded
+```
+
 **Декадирование**
 
 Пример:
@@ -124,6 +138,12 @@ Json::decode('{"example": 12345}');
 // ['example' => 12345]
 ```
 
+Подключить исключения:
+```php
+Json::setCheckException();
+Json::decode("{'example': 12345}");
+// Syntax error
+```
 
 **Проверка на ошибки**
 
