@@ -137,6 +137,25 @@ Json::isNoteError();
 // false
 ```
 
+**Получить текст ошибки**
+
+Пример:
+```php
+Json::decode('{"example": 12345}');
+Json::getErrorMsg();
+// NULL
+Json::decode("{'example': 12345}");
+Json::getErrorMsg();
+// Syntax error
+```
+
+Добавить сообщение:
+```php
+Json::decode("{'example': 12345}");
+Json::getErrorMsg('- Example');
+// Syntax error - Example
+```
+
 **Превратить ошибку в исключение**
 
 Пример:

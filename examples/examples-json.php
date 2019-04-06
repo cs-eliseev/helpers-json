@@ -64,4 +64,3 @@ foreach ($json as $string) {
     }
 }
 echo PHP_EOL;
-
