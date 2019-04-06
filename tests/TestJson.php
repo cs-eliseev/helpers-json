@@ -120,6 +120,45 @@ class TestJson extends TestCase
     }
 
     /**
+     * @param string $data
+     * @param null|string $msg
+     * @param null|string $expected
+     *
+     * @throws CSEHelpersJsonException
+     *
+     * @dataProvider providerGetErrorMsg
+     */
+    public function testGetErrorMsg(string $data, ?string $msg, ?string $expected): void
+    {
+        Json::decode($data);
+        $this->assertEquals($expected, Json::getErrorMsg($msg));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerGetErrorMsg(): array
+    {
+        return [
+            [
+                '{"test": 12345}',
+                null,
+                null
+            ],
+            [
+                "{'test': 12345}",
+                null,
+                'Syntax error'
+            ],
+            [
+                "{'test': 12345}",
+                '(test)',
+                'Syntax error (test)'
+            ],
+        ];
+    }
+
+    /**
      * @throws CSEHelpersJsonException
      */
     public function testErrorToException(): void
