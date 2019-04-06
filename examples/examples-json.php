@@ -20,19 +20,6 @@ echo PHP_EOL;
 var_dump(Json::decode('{"example": 12345}'));
 echo PHP_EOL;
 
-// Example: is not error
-$json = [
-    '{"example": 12345}',   // true
-    "{'example': 12345}",   // false
-    '{"example": 12345}',   // true
-];
-
-foreach ($json as $string) {
-    Json::decode($string);
-    var_dump(Json::isNoteError());
-}
-echo PHP_EOL;
-
 // Example: error to exception
 $json = [
     '{"example": 12345}',   // success
@@ -40,6 +27,14 @@ $json = [
     '{"example": 12345}',   // success
 ];
 
+// Example: is not error
+foreach ($json as $string) {
+    Json::decode($string);
+    var_dump(Json::isNoteError());
+}
+echo PHP_EOL;
+
+// Example: error to exception
 foreach ($json as $string) {
     try {
         Json::decode($string);
@@ -51,6 +46,7 @@ foreach ($json as $string) {
 }
 echo PHP_EOL;
 
+// Exception set check exception
 Json::setCheckException();
 foreach ($json as $string) {
     try {
@@ -61,3 +57,4 @@ foreach ($json as $string) {
     }
 }
 echo PHP_EOL;
+
