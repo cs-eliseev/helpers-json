@@ -16,6 +16,7 @@ JSON CSE HELPERS
 
 Репозиторий проекта: https://github.com/cs-eliseev/helpers-json
 
+**DEMO**
 ```php
 $json = [
     '{"example": 12345}',   // success
@@ -299,7 +300,7 @@ phpunit --configuration PATH/TO/PROJECT/phpunit.xml
 
 ## Лицензия
 
-CSE HELPERS JSON это PHP-библиотека с открытым исходным кодом распространяемая по лицензии MIT. Для получения более подробной информации, пожалуйста, ознакомьтесь с [лицензионным файлом](https://github.com/cs-eliseev/helpers-json/blob/master/LICENSE.md).
+JSON CSE HELPERS это PHP-библиотека с открытым исходным кодом распространяемая по лицензии MIT. Для получения более подробной информации, пожалуйста, ознакомьтесь с [лицензионным файлом](https://github.com/cs-eliseev/helpers-json/blob/master/LICENSE.md).
 
 ***
 

@@ -16,6 +16,7 @@ The helpers allows you to JSON processing. Encode, decode, check error, throw ex
 
 Project repository: https://github.com/cs-eliseev/helpers-json
 
+**DEMO**
 ```php
 $json = [
     '{"example": 12345}',   // success
@@ -296,7 +297,7 @@ Even voicing your suggestions for features is great. Anything to help is much ap
 
 ## License
 
-The CSE HELPERS JSON is open-source PHP library licensed under the MIT license. Please see [License File](https://github.com/cs-eliseev/helpers-json/blob/master/LICENSE.md) for more information.
+The JSON CSE HELPERS is open-source PHP library licensed under the MIT license. Please see [License File](https://github.com/cs-eliseev/helpers-json/blob/master/LICENSE.md) for more information.
 
 ***
 
