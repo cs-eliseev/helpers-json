@@ -53,10 +53,10 @@ class TestJson extends TestCase
     {
         return [
             [
-                ['example' => 12345, 'example2' => 56789],
-                '{' . PHP_EOL .
-                '    "example": 12345,' . PHP_EOL .
-                '    "example2": 56789' . PHP_EOL .
+                ['текст' => 12345, 'текст2' => 56789],
+                '{' . "\n" .
+                '    "текст": 12345,' . "\n" .
+                '    "текст2": 56789' . "\n" .
                 '}'
             ],
         ];
