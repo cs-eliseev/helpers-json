@@ -40,11 +40,11 @@ foreach ($json as $item) {
 
 ## Описание проекта
 
-CSE HELPERS - это набор из небольших библиотек с простыми функциями написанных на PHP специально для вас.
+[CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.ru_RU.md) - это набор из небольших библиотек с простыми функциями написанных на PHP специально для вас.
 
 Несмотря на повсеместное использование PHP в качестве основного языка для WEB разработки, его зачастую недостаточно. JSON CSE HELPERS, позволит вам довольно просто использовать методы для кодирования, декодирования, проверки на ошибки, вызов исключения и прочее.
 
-CSE HELPERS создан для быстрой разработки веб-приложений.
+[CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.ru_RU.md) создан для быстрой разработки веб-приложений.
 
 **Список библиотек CSE Helpers:**
 * [Array CSE helpers](https://github.com/cs-eliseev/helpers-arrays)
