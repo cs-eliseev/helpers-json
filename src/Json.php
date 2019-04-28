@@ -50,7 +50,7 @@ class Json
      */
     public static function prettyPrint($data): string
     {
-        $result = json_encode($data, JSON_PRETTY_PRINT);
+        $result = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
         if (self::$checkException) self::errorToException();
 
