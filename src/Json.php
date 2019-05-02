@@ -14,6 +14,7 @@ use cse\helpers\Exceptions\CSEHelpersJsonException;
 class Json
 {
     const JSON_DEFAULT_UNESCAPED = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
+    const PRETTY_PRINT = self::JSON_DEFAULT_UNESCAPED | JSON_PRETTY_PRINT;
 
     /**
      * @var bool
@@ -50,7 +51,7 @@ class Json
      */
     public static function prettyPrint($data): string
     {
-        $result = json_encode($data, JSON_PRETTY_PRINT);
+        $result = json_encode($data, self::PRETTY_PRINT);
 
         if (self::$checkException) self::errorToException();
 
