@@ -42,7 +42,8 @@ foreach ($json as $item) {
 
 [CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.ru_RU.md) - это набор из небольших библиотек с простыми функциями написанных на PHP специально для вас.
 
-Несмотря на повсеместное использование PHP в качестве основного языка для WEB разработки, его зачастую недостаточно. JSON CSE HELPERS, позволит вам довольно просто использовать методы для кодирования, декодирования, проверки на ошибки, вызов исключения и прочее.
+Несмотря на повсеместное использование PHP в качестве основного языка для WEB разработки, его зачастую недостаточно. 
+JSON CSE HELPERS, позволит вам довольно просто использовать методы для кодирования, декодирования, проверки на ошибки, вызов исключения и прочее.
 
 [CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.ru_RU.md) создан для быстрой разработки веб-приложений.
 
@@ -95,10 +96,10 @@ git clone https://github.com/cs-eliseev/helpers-json.git
 
 ## Использование
 
-Данный класс использует статические методы, которые удобно использовать в любом проекте. Смотрите пример [examples-json.php](https://github.com/cs-eliseev/helpers-json/blob/master/examples/examples-json.php).
+Данный класс использует статические методы, которые удобно использовать в любом проекте. 
+Смотрите пример [examples-json.php](https://github.com/cs-eliseev/helpers-json/blob/master/examples/examples-json.php).
 
-
-**Кодирование**
+**Закодировать в JSON**
 
 Пример:
 ```php
@@ -113,7 +114,7 @@ Json::encode([urldecode('bad utf string %C4_')]);
 // Exception: Malformed UTF-8 characters, possibly incorrectly encoded
 ```
 
-**Форматирование json представление**
+**Форматирование JSON представление**
 
 Пример:
 ```php
@@ -131,7 +132,7 @@ Json::encode([urldecode('bad utf string %C4_')]);
 // Exception: Malformed UTF-8 characters, possibly incorrectly encoded
 ```
 
-**Декадирование**
+**Декадирование JSON данных**
 
 Пример:
 ```php

@@ -41,7 +41,8 @@ foreach ($json as $item) {
 
 [CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.md) is a collection of several libraries with simple functions written in PHP for people.
 
-Despite using PHP as the main programming language for the Internet, its functions are not enough. JSON CSE HELPERS used method: encode, decode, check error, throw exception.
+Despite using PHP as the main programming language for the Internet, its functions are not enough.
+ JSON CSE HELPERS used method: encode, decode, check error, throw exception.
 
 [CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.md) was created for the rapid development of web applications.
 
@@ -93,9 +94,10 @@ git clone https://github.com/cs-eliseev/helpers-json.git
 
 ## Usage
 
-The class consists of static methods that are conveniently used in any project. See example [examples-json.php](https://github.com/cs-eliseev/helpers-json/blob/master/examples/examples-json.php).
+The class consists of static methods that are conveniently used in any project. 
+See example [examples-json.php](https://github.com/cs-eliseev/helpers-json/blob/master/examples/examples-json.php).
 
-**Encode**
+**JSON ENCODE**
 
 Example:
 ```php
@@ -110,7 +112,7 @@ Json::encode([urldecode('bad utf string %C4_')]);
 // Exception: Malformed UTF-8 characters, possibly incorrectly encoded
 ```
 
-**Pretty Print**
+**JSON Pretty Print**
 
 Example:
 ```php
@@ -128,7 +130,7 @@ Json::prettyPrint([urldecode('bad utf string %C4_')]);
 // Exception: Malformed UTF-8 characters, possibly incorrectly encoded
 ```
 
-**Decode**
+**JSON DECODE**
 
 Example:
 ```php
