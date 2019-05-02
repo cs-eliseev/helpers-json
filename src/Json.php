@@ -23,16 +23,16 @@ class Json
     /**
      * Json encode
      *
-     * @param array $data
+     * @param array $array
      * @param int $options
      *
      * @return string
      *
      * @throws CSEHelpersJsonException
      */
-    public static function encode(array $data, int $options = self::JSON_DEFAULT_UNESCAPED): string
+    public static function encode(array $array, int $options = self::JSON_DEFAULT_UNESCAPED): string
     {
-        $result = json_encode($data, $options);
+        $result = json_encode($array, $options);
 
         if (self::$checkException) self::errorToException();
 
@@ -50,7 +50,7 @@ class Json
      */
     public static function prettyPrint($data): string
     {
-        $result = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        $result = json_encode($data, JSON_PRETTY_PRINT);
 
         if (self::$checkException) self::errorToException();
 
@@ -60,16 +60,16 @@ class Json
     /**
      * Json decode
      *
-     * @param string $data
+     * @param string $json
      * @param bool $assoc
      *
      * @return mixed
      *
      * @throws CSEHelpersJsonException
      */
-    public static function decode(string $data, bool $assoc = true)
+    public static function decode(string $json, bool $assoc = true)
     {
-        $result = json_decode($data, $assoc);
+        $result = json_decode($json, $assoc);
 
         if (self::$checkException) self::errorToException();
 

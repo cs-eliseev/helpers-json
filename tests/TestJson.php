@@ -1,23 +1,22 @@
 <?php
 
-use cse\helpers\Exceptions\CSEHelpersJsonException;
-
 use cse\helpers\Json;
+use cse\helpers\Exceptions\CSEHelpersJsonException;
 use PHPUnit\Framework\TestCase;
 
 class TestJson extends TestCase
 {
     /**
-     * @param array $data
+     * @param array $array
      * @param string $expected
      *
      * @throws CSEHelpersJsonException
      *
      * @dataProvider providerEncode
      */
-    public function testEncode(array $data, string $expected): void
+    public function testEncode(array $array, string $expected): void
     {
-        $this->assertEquals($expected, Json::encode($data));
+        $this->assertEquals($expected, Json::encode($array));
     }
 
     /**
@@ -34,14 +33,14 @@ class TestJson extends TestCase
     }
 
     /**
-     * @param array $data
+     * @param $data
      * @param string $expected
      *
      * @throws CSEHelpersJsonException
      *
      * @dataProvider providerPrettyPrint
      */
-    public function testPrettyPrint(array $data, string $expected): void
+    public function testPrettyPrint($data, string $expected): void
     {
         $this->assertEquals($expected, Json::prettyPrint($data));
     }
@@ -59,20 +58,24 @@ class TestJson extends TestCase
                 '    "текст2": 56789' . "\n" .
                 '}'
             ],
+            [
+                'test',
+                '"test"'
+            ],
         ];
     }
 
     /**
-     * @param string $data
+     * @param string $json
      * @param array $expected
      *
      * @throws CSEHelpersJsonException
      *
      * @dataProvider providerDecode
      */
-    public function tesDecode(string $data, array $expected): void
+    public function tesDecode(string $json, array $expected): void
     {
-        $this->assertEquals($expected, Json::decode($data));
+        $this->assertEquals($expected, Json::decode($json));
     }
 
     /**
