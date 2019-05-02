@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "php": ">=7.1"
+        "php": ">=7.1",
+        "cse/base-exceptions": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*"

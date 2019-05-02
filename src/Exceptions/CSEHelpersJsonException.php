@@ -2,14 +2,14 @@
 
 namespace cse\helpers\Exceptions;
 
-use Exception;
+use cse\base\CseExceptions;
 
 /**
  * Class CSEHelpersJsonException
  *
  * @package cse\helpers\Exceptions
  */
-class CSEHelpersJsonException extends Exception
+class CSEHelpersJsonException extends CseExceptions
 {
 
 }
