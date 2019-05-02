@@ -1,5 +1,6 @@
 <?php
 
+use cse\base\CseExceptions;
 use cse\helpers\Json;
 use cse\helpers\Exceptions\CSEHelpersJsonException;
 use PHPUnit\Framework\TestCase;
@@ -178,6 +179,17 @@ class TestJson extends TestCase
     public function testSetCheckException(): void
     {
         $this->expectException(CSEHelpersJsonException::class);
+
+        Json::setCheckException();
+        Json::decode("{'test': 12345}");
+    }
+
+    /**
+     * @throws CSEHelpersJsonException
+     */
+    public function testCheckCseExceptions(): void
+    {
+        $this->expectException(CseExceptions::class);
 
         Json::setCheckException();
         Json::decode("{'test': 12345}");
