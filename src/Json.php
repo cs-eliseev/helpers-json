@@ -78,6 +78,22 @@ class Json
     }
 
     /**
+     * Get json data
+     *
+     * @param string $json
+     * @param string $key
+     * @param null $default
+     *
+     * @return string
+     *
+     * @throws CSEHelpersJsonException
+     */
+    public static function get(string $json, string $key, $default = null)
+    {
+        return self::decode($json)[$key] ?? $default;
+    }
+
+    /**
      * Set check Exception
      *
      * @param bool $status
