@@ -202,6 +202,17 @@ try {
 // Syntax error (JSON)
 ```
 
+Экземпляр объекта исключений:
+```php
+try {
+    Json::decode("{'example': 12345}");
+    Json::errorToException('CseExceptions');
+} catch (CseExceptions $e) {
+    var_dump($e->getMessage());
+}
+// Syntax error CseExceptions
+```
+
 **Вызывать исключения при ошибках**
 
 Пример:

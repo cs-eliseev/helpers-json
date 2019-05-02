@@ -200,6 +200,17 @@ try {
 // Syntax error (JSON)
 ```
 
+Exception instance:
+```php
+try {
+    Json::decode("{'example': 12345}");
+    Json::errorToException('(JSON)');
+} catch (CseExceptions $e) {
+    var_dump($e->getMessage());
+}
+// Syntax error (JSON)
+```
+
 **Set check exception**
 
 Example:
