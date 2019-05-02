@@ -147,6 +147,27 @@ Json::decode("{'example': 12345}");
 // Syntax error
 ```
 
+**Получить значение из JSON по ключу**
+
+Пример:
+```php
+Json::get('{"example": 12345}', 'example');
+// 12345
+```
+
+Установить значение по умолчанию:
+```php
+Json::get('{"example": 12345}', 'example2', 56789);
+// 56789
+```
+
+Подключить исключения:
+```php
+Json::setCheckException();
+Json::get("{'example': 12345}", 'example');
+// Syntax error
+```
+
 **Проверка на ошибки**
 
 Пример:

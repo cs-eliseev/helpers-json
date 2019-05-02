@@ -145,6 +145,27 @@ Json::decode("{'example': 12345}");
 // Syntax error
 ```
 
+**GET JSON data to key**
+
+Example:
+```php
+Json::get('{"example": 12345}', 'example');
+// 12345
+```
+
+Set default data:
+```php
+Json::get('{"example": 12345}', 'example2', 56789);
+// 56789
+```
+
+Set Check Exception:
+```php
+Json::setCheckException();
+Json::get("{'example': 12345}", 'example');
+// Syntax error
+```
+
 **Check error last json transform**
 
 Example:
