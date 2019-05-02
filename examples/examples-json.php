@@ -2,6 +2,7 @@
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'autoload.php';
 
+use cse\base\CseExceptions;
 use cse\helpers\Exceptions\CSEHelpersJsonException;
 use cse\helpers\Json;
 
@@ -24,30 +25,6 @@ $label = 'Decode: ';
 // {"example": 12345} => ["example" => 12345]
 echo $label . PHP_EOL;
 var_dump(Json::decode('{"example": 12345}'));
-echo PHP_EOL;
-
-// Example: set
-$label = 'Set: ';
-// {"example": 12345} => {"example": 12345, "example2": 56789}
-var_dump($label . Json::set('{"example": 12345}', 'example2', 56789));
-// {"example": 12345} => {"example": 56789}
-var_dump($label . Json::set('{"example": 12345}', 'example', 56789));
-echo PHP_EOL;
-
-// Example: set array
-$label = 'Set array: ';
-// {"example": 12345} => {"example": 12345, "example2": 56789}
-var_dump($label . Json::setArray('{"example": 12345}', ['example2' => 56789]));
-// {"example": 12345} => {"example": 56789}
-var_dump($label . Json::setArray('{"example": 12345}', ['example' => 56789]));
-echo PHP_EOL;
-
-// Example: get
-$label = 'Get: ';
-// {"example": 12345} => 12345
-var_dump($label . Json::get('{"example": 12345}', 'example'));
-// {"example": 12345} => 56789
-var_dump($label . Json::get('{"example": 12345}', 'example2', 56789));
 echo PHP_EOL;
 
 // Example: error to exception
@@ -94,6 +71,18 @@ foreach ($json as $string) {
         Json::decode($string);
         var_dump($label . 'success');
     } catch (CSEHelpersJsonException $e) {
+        var_dump($label . $e->getMessage());
+    }
+}
+echo PHP_EOL;
+
+// Example: check instance CseExceptions
+$label = 'Check instance CseExceptions: ';
+foreach ($json as $string) {
+    try {
+        Json::decode($string);
+        var_dump($label . 'success');
+    } catch (CseExceptions $e) {
         var_dump($label . $e->getMessage());
     }
 }
