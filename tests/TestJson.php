@@ -102,7 +102,7 @@ class TestJson extends TestCase
      *
      * @dataProvider providerGet
      */
-    public function tesGet(string $json, string $key, $default, $expected): void
+    public function testGet(string $json, string $key, $default, $expected): void
     {
         $this->assertEquals($expected, Json::get($json, $key, $default));
     }
