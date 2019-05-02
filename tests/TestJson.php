@@ -104,7 +104,7 @@ class TestJson extends TestCase
      */
     public function tesGet(string $json, string $key, $default, $expected): void
     {
-        $this->assertEquals($expected, Json::set($json, $key, $default));
+        $this->assertEquals($expected, Json::get($json, $key, $default));
     }
 
     /**
