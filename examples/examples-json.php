@@ -27,6 +27,14 @@ echo $label . PHP_EOL;
 var_dump(Json::decode('{"example": 12345}'));
 echo PHP_EOL;
 
+// Example: get
+$label = 'Get: ';
+// {"example": 12345} => 12345
+var_dump($label . Json::get('{"example": 12345}', 'example'));
+// {"example": 12345} => 56789
+var_dump($label . Json::get('{"example": 12345}', 'example2', 56789));
+echo PHP_EOL;
+
 // Example: error to exception
 $json = [
     '{"example": 12345}',   // success
