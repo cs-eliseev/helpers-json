@@ -114,6 +114,24 @@ class Json
     }
 
     /**
+     * Set array json data
+     *
+     * @param string $json
+     * @param array $data
+     * @param int $options
+     *
+     * @return string
+     *
+     * @throws CSEHelpersJsonException
+     */
+    public static function setArray(string $json, array $data, int $options = self::JSON_DEFAULT_UNESCAPED): string
+    {
+        $result = self::decode($json);
+
+        return self::encode(array_merge($result, $data), $options);
+    }
+
+    /**
      * Set check Exception
      *
      * @param bool $status
