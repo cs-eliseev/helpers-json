@@ -43,7 +43,7 @@ class Json
     /**
      * Print JSON data
      *
-     * @param $data
+     * @param mixed $data
      *
      * @return string
      *
@@ -82,7 +82,7 @@ class Json
      *
      * @param string $json
      * @param string $key
-     * @param null $default
+     * @param mixed|null $default
      *
      * @return string
      *
@@ -91,6 +91,26 @@ class Json
     public static function get(string $json, string $key, $default = null)
     {
         return self::decode($json)[$key] ?? $default;
+    }
+
+    /**
+     * Set json data
+     *
+     * @param string $json
+     * @param string $key
+     * @param mixed $value
+     * @param int $options
+     *
+     * @return string
+     *
+     * @throws CSEHelpersJsonException
+     */
+    public static function set(string $json, string $key, $value, int $options = self::JSON_DEFAULT_UNESCAPED): string
+    {
+        $result = self::decode($json);
+        $result[$key] = $value;
+
+        return self::encode($result, $options);
     }
 
     /**
@@ -116,7 +136,7 @@ class Json
     /**
      * Get error msg
      *
-     * @param $msg
+     * @param mixed|null $msg
      *
      * @return string|null
      */
@@ -128,7 +148,7 @@ class Json
     /**
      * Error to exception
      *
-     * @param $msg
+     * @param mixed|null $msg
      *
      * @throws CSEHelpersJsonException
      */
