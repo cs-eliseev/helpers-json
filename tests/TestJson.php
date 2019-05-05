@@ -129,6 +129,42 @@ class TestJson extends TestCase
     }
 
     /**
+     * @param string $json
+     * @param string $key
+     * @param $value
+     * @param string $expected
+     *
+     * @throws CSEHelpersJsonException
+     *
+     * @dataProvider providerSet
+     */
+    public function testSet(string $json, string $key, $value, string $expected): void
+    {
+        $this->assertEquals($expected, Json::set($json, $key, $value));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerSet(): array
+    {
+        return [
+            [
+                '{"test": 12345}',
+                'test2',
+                56789,
+                '{"test": 12345, "test2": 56789}'
+            ],
+            [
+                '{"test": 12345}',
+                'test',
+                56789,
+                '{"test": 56789}'
+            ],
+        ];
+    }
+
+    /**
      * @param string $data
      * @param bool $expected
      *
