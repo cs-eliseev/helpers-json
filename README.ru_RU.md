@@ -168,6 +168,27 @@ Json::get("{'example': 12345}", 'example');
 // Syntax error
 ```
 
+**Установить JSON данные**
+
+Пример:
+```php
+Json::set('{"example": 12345}', 'example2', 56789);
+// {"example": 12345, "example2": 56789}
+```
+
+Заменить значение:
+```php
+Json::set('{"example": 12345}', 'example', 56789);
+// {"example": 56789}
+```
+
+Подключить исключения:
+```php
+Json::setCheckException();
+Json::set("{'example': 12345}", 'example2', 56789);
+// Syntax error
+```
+
 **Проверка на ошибки**
 
 Пример:

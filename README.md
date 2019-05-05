@@ -166,16 +166,25 @@ Json::get("{'example': 12345}", 'example');
 // Syntax error
 ```
 
-**Check error last json transform**
+**SET JSON data**
 
 Example:
 ```php
-Json::decode('{"example": 12345}');
-Json::isNoteError();
-// true
-Json::decode("{'example': 12345}");
-Json::isNoteError();
-// false
+Json::set('{"example": 12345}', 'example2', 56789);
+// {"example": 12345, "example2": 56789}
+```
+
+Change value:
+```php
+Json::set('{"example": 12345}', 'example', 56789);
+// {"example": 56789}
+```
+
+Set Check Exception:
+```php
+Json::setCheckException();
+Json::set("{'example': 12345}", 'example2', 56789);
+// Syntax error
 ```
 
 **Get error**
