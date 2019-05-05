@@ -43,6 +43,14 @@ var_dump($label . Json::set('{"example": 12345}', 'example2', 56789));
 var_dump($label . Json::set('{"example": 12345}', 'example', 56789));
 echo PHP_EOL;
 
+// Example: set array
+$label = 'Set array: ';
+// {"example": 12345} => {"example": 12345, "example2": 56789}
+var_dump($label . Json::setArray('{"example": 12345}', ['example2' => 56789]));
+// {"example": 12345} => {"example": 56789}
+var_dump($label . Json::setArray('{"example": 12345}', ['example' => 56789]));
+echo PHP_EOL;
+
 // Example: error to exception
 $json = [
     '{"example": 12345}',   // success
