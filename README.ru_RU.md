@@ -189,6 +189,27 @@ Json::set("{'example': 12345}", 'example2', 56789);
 // Syntax error
 ```
 
+**Установить массив параметров**
+
+Пример:
+```php
+Json::setArray('{"example": 12345}', ['example2' => 56789]);
+// {"example": 12345, "example2": 56789}
+```
+
+Заменить значения:
+```php
+Json::setArray('{"example": 12345}', ['example' => 56789]);
+// {"example": 56789}
+```
+
+Подключить исключения:
+```php
+Json::setCheckException();
+Json::setArray("{'example': 12345}", ['example2' => 56789]);
+// Syntax error
+```
+
 **Проверка на ошибки**
 
 Пример:

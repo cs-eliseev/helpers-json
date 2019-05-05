@@ -187,6 +187,39 @@ Json::set("{'example': 12345}", 'example2', 56789);
 // Syntax error
 ```
 
+**SET ARRAY JSON**
+
+Example:
+```php
+Json::setArray('{"example": 12345}', ['example2' => 56789]);
+// {"example": 12345, "example2": 56789}
+```
+
+Change value:
+```php
+Json::setArray('{"example": 12345}', ['example' => 56789]);
+// {"example": 56789}
+```
+
+Set Check Exception:
+```php
+Json::setCheckException();
+Json::setArray("{'example': 12345}", ['example2' => 56789]);
+// Syntax error
+```
+
+**Check error last json transform**
+
+Example:
+```php
+Json::decode('{"example": 12345}');
+Json::isNoteError();
+// true
+Json::decode("{'example': 12345}");
+Json::isNoteError();
+// false
+```
+
 **Get error**
 
 Example:
