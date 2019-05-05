@@ -153,13 +153,13 @@ class TestJson extends TestCase
                 '{"test": 12345}',
                 'test2',
                 56789,
-                '{"test": 12345, "test2": 56789}'
+                '{"test":12345,"test2": 56789}'
             ],
             [
                 '{"test": 12345}',
                 'test',
                 56789,
-                '{"test": 56789}'
+                '{"test":56789}'
             ],
         ];
     }
@@ -187,12 +187,12 @@ class TestJson extends TestCase
             [
                 '{"test": 12345}',
                 ['test2' => 56789],
-                '{"test": 12345, "test2": 56789}'
+                '{"test":12345,"test2":56789}'
             ],
             [
                 '{"test": 12345}',
                 ['test' => 56789],
-                '{"test": 56789}'
+                '{"test":56789}'
             ],
         ];
     }
